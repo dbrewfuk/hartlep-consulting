@@ -3,6 +3,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
 import client from '../../client'
 
+
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
@@ -25,6 +26,7 @@ const ptComponents = {
 }
 
 const Post = ({post}) => {
+  if(!post) return null
   const {
     title = 'Missing title',
     name = 'Missing name',

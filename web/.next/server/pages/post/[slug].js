@@ -5,22 +5,22 @@ exports.id = 515;
 exports.ids = [515];
 exports.modules = {
 
-/***/ 257:
+/***/ 7257:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
-const sanityClient = __webpack_require__(97);
+const sanityClient = __webpack_require__(1097);
 module.exports = sanityClient({
-    projectId: 'xa9fgtwh',
-    dataset: 'production',
+    projectId: "0wopf0m0",
+    dataset: "production",
     useCdn: true,
-    apiVersion: '2021-12-28'
+    apiVersion: "2021-12-28"
 });
 
 
 /***/ }),
 
-/***/ 113:
+/***/ 2113:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -36,7 +36,7 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 // EXTERNAL MODULE: external "groq"
-var external_groq_ = __webpack_require__(360);
+var external_groq_ = __webpack_require__(1360);
 var external_groq_default = /*#__PURE__*/__webpack_require__.n(external_groq_);
 ;// CONCATENATED MODULE: external "@sanity/image-url"
 const image_url_namespaceObject = require("@sanity/image-url");
@@ -44,7 +44,7 @@ var image_url_default = /*#__PURE__*/__webpack_require__.n(image_url_namespaceOb
 ;// CONCATENATED MODULE: external "@portabletext/react"
 const react_namespaceObject = require("@portabletext/react");
 // EXTERNAL MODULE: ./client.js
-var client = __webpack_require__(257);
+var client = __webpack_require__(7257);
 var client_default = /*#__PURE__*/__webpack_require__.n(client);
 ;// CONCATENATED MODULE: ./pages/post/[slug].js
 
@@ -62,17 +62,18 @@ const ptComponents = {
             if (!(value === null || value === void 0 ? void 0 : (ref = value.asset) === null || ref === void 0 ? void 0 : ref._ref)) {
                 return null;
             }
-            return(/*#__PURE__*/ jsx_runtime_.jsx("img", {
-                alt: value.alt || ' ',
+            return /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                alt: value.alt || " ",
                 loading: "lazy",
-                src: urlFor(value).width(320).height(240).fit('max').auto('format')
-            }));
+                src: urlFor(value).width(320).height(240).fit("max").auto("format")
+            });
         }
     }
 };
 const Post = ({ post  })=>{
-    const { title ='Missing title' , name ='Missing name' , categories , authorImage , body =[]  } = post;
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("article", {
+    if (!post) return null;
+    const { title ="Missing title" , name ="Missing name" , categories , authorImage , body =[]  } = post;
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("article", {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx("h1", {
                 children: title
@@ -88,8 +89,7 @@ const Post = ({ post  })=>{
                     "Posted in",
                     categories.map((category)=>/*#__PURE__*/ jsx_runtime_.jsx("li", {
                             children: category
-                        }, category)
-                    )
+                        }, category))
                 ]
             }),
             authorImage && /*#__PURE__*/ jsx_runtime_.jsx("div", {
@@ -103,7 +103,7 @@ const Post = ({ post  })=>{
                 components: ptComponents
             })
         ]
-    }));
+    });
 };
 const query = (external_groq_default())`*[_type == "post" && slug.current == $slug][0]{
   title,
@@ -119,8 +119,7 @@ async function getStaticPaths() {
                 params: {
                     slug
                 }
-            })
-        ),
+            })),
         fallback: true
     };
 }
@@ -141,14 +140,14 @@ async function getStaticProps(context) {
 
 /***/ }),
 
-/***/ 97:
+/***/ 1097:
 /***/ ((module) => {
 
 module.exports = require("@sanity/client");
 
 /***/ }),
 
-/***/ 360:
+/***/ 1360:
 /***/ ((module) => {
 
 module.exports = require("groq");
@@ -169,7 +168,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(113));
+var __webpack_exports__ = (__webpack_exec__(2113));
 module.exports = __webpack_exports__;
 
 })();
