@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "my-blog"
+    "name": "demo"
   },
   "plugins": [
     "@sanity/base",
