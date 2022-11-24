@@ -5,7 +5,7 @@ import client from '../client'
 const Index = ({posts}) => {
     return (
       <div>
-        <h1>Welcome to a blog!</h1>
+        <h1>Welcome to a cool blog!</h1>
         {posts.length > 0 && posts.map(
           ({ _id, title = '', slug = '', publishedAt = '' }) =>
             slug && (
